@@ -3,8 +3,8 @@
         v{{ current_version }}
     </a>
     {%- for name, url in versions.branches %}
-        {% if name == current_version %}
-        <a class="other-version" href="{{ url }}">{{ name }}</a>
+        {% if name != current_version %}
+        <a class="other-version" href="{{ url }}">v{{ name }}</a>
         {%- endif %}
     {%- endfor %}
 
