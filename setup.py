@@ -104,6 +104,7 @@ if __name__ == '__main__':
         name=NAME,
         package_data={'': [
             os.path.join('_static', 'banner.css'),
+            os.path.join('_static', 'versions.css'),
             os.path.join('_templates', 'banner.html'),
             os.path.join('_templates', 'layout.html'),
             os.path.join('_templates', 'versions.html'),
