@@ -1,11 +1,12 @@
-<div style="position: fixed;top: 6.5rem;left: 8.5rem;z-index: 100;" aria-label="versions">
-    <a style="background-color: #e45453;margin-right: .3rem;padding-left: 0.4rem;padding-right: 0.3rem;padding-top: 0.2rem;padding-bottom: 0.2rem;border-radius: .2rem;line-height: 2.7rem;color: white;text-decoration: none;font-size: 15px;" data-toggle="rst-current-version">
-        v{{ current_version }}
-    </a>
-    {%- for name, url in versions.branches %}
-        {% if name != current_version %}
-        <a style="background-color: #c7b6b6;margin-right: .3rem;padding-left: 0.4rem;padding-right: 0.4rem;padding-top: 0.2rem;padding-bottom: 0.2rem;border-radius: .2rem;line-height: 2.7rem;color: white;text-decoration: none;font-size: 15px;" href="{{ url }}">v{{ name }}</a>
-        {%- endif %}
-    {%- endfor %}
+<link rel="stylesheet" href="../_static//versions.css">
 
+<div class="dropdown"  aria-label="versions">
+    <button class="dropdown__button" data-toggle="rst-current-version">v{{ current_version }} &#9660;</button>
+    <div class="dropdown-content">
+        {%- for name, url in versions.branches %}
+        {% if name != current_version %}
+        <a href="{{ url }}">v{{ name }}</a>
+        {%- endif %}
+        {%- endfor %}
+    </div>
 </div>
