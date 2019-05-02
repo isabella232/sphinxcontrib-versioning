@@ -1,59 +1,11 @@
-<div class="dropdown" aria-label="versions">
-    <button class="dropdown__button" data-toggle="rst-current-version">v{{ current_version }} &#9660;</button>
-    <div class="dropdown__content">
-        {%- for name, url in versions.branches %}
+<div style="position: fixed;top: 6.5rem;left: 8.5rem;z-index: 100;" aria-label="versions">
+    <a style="background-color: #e45453;margin-right: .3rem;padding-left: 0.4rem;padding-right: 0.3rem;padding-top: 0.2rem;padding-bottom: 0.2rem;border-radius: .2rem;line-height: 2.7rem;color: white;text-decoration: none;font-size: 15px;" data-toggle="rst-current-version">
+        v{{ current_version }}
+    </a>
+    {%- for name, url in versions.branches %}
         {% if name != current_version %}
-        <a href="{{ url }}">v{{ name }}</a>
+        <a style="background-color: #c7b6b6;margin-right: .3rem;padding-left: 0.4rem;padding-right: 0.4rem;padding-top: 0.2rem;padding-bottom: 0.2rem;border-radius: .2rem;line-height: 2.7rem;color: white;text-decoration: none;font-size: 15px;" href="{{ url }}">v{{ name }}</a>
         {%- endif %}
-        {%- endfor %}
-    </div>
+    {%- endfor %}
+
 </div>
-
-<style>
-    .dropdown {
-        display: inline-block;
-        position: relative;
-        z-index: 100;
-        width: 100%;
-        padding: 0;
-    }
-
-    .dropdown__button {
-        background-color: #e45453;
-        cursor: pointer;
-        color: white;
-        padding: 8px;
-        border: none;
-        width: 100%;
-    }
-
-    .dropdown__content {
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        background-color: #f9f9f9;
-        position: absolute;
-        min-width: auto;
-        display: none;
-        width: 100%;
-        z-index: 1;
-    }
-
-    .dropdown__content a {
-        text-decoration: none;
-        padding: 6px 8px;
-        text-align: center;
-        color: #353535;
-        display: block;
-    }
-
-    .dropdown__content a:hover {
-        background-color: #f1f1f1;
-    }
-
-    .dropdown:hover .dropdown__content {
-        display: block;
-    }
-
-    .dropdown:hover .dropdown__button {
-        background-color: #e45453;
-    }
-</style>
